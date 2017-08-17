@@ -1,0 +1,10 @@
+{
+  "title": "install",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "npm install -g commitizen"
+    }
+  ]
+}

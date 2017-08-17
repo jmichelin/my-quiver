@@ -1,0 +1,14 @@
+{
+  "title": "6cwu",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "componentWillUpdate() {\n  console.log('Component Will Update');\n}"
+    },
+    {
+      "type": "markdown",
+      "data": "This method runs right before the component is taken off the DOM. Most common thing to do here is get rid of external event listeners or other things you need to clean up."
+    }
+  ]
+}

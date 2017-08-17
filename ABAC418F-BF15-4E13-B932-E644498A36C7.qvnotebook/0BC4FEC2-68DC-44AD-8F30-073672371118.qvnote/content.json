@@ -1,0 +1,10 @@
+{
+  "title": "Perfect Squares in range",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var spacebetween = (a,b) => {\n  return Math.floor(Math.sqrt(b)) - Math.ceil(Math.sqrt(a)) + 1\n}"
+    }
+  ]
+}

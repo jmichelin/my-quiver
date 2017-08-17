@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493318720,
+  "tags" : [
+
+  ],
+  "title" : "What is a potential pitfall with using typeof bar === \"object\" to determine if bar is an object? How can this pitfall be avoided?",
+  "updated_at" : 1493318805,
+  "uuid" : "89970DCB-F4F5-465F-AE26-71756FC580E0"
+}

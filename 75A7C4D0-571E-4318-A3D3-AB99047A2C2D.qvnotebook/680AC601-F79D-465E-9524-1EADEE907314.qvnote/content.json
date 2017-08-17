@@ -1,0 +1,10 @@
+{
+  "title": "6cmp",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "const  = (props) => <>{props.children}</>"
+    }
+  ]
+}

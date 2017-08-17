@@ -1,0 +1,10 @@
+{
+  "title": "6rdr",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "ReactDOM.render(< />, document.getElementById(''))"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "title": "Monads",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "https://www.youtube.com/watch?v=cB0vpg9-YMQ\n\nA **functor** is something that you can **map**\nA **monad** is a functor that you **flatmap**\n\n**Functors:**\n* array\n* tree\n* stream (also **monad**)\n* promise (also **monad**)\n\nDeeper Dive into Map\n\nA functor just means stuff that can be mapped.\n"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "let portuguese = [\n  'galinha',\n  'vaca',\n  'milho'\n  ]\n  \n  portuguese.map(_.capitalize);\n  > ['Galinha', 'Vaca', 'Milho']"
+    },
+    {
+      "type": "markdown",
+      "data": "Map is a method on array that takes a single argument, a function, it will walk through the array and apply the function, and feed it into a new array.\n\nAn array is a set of boxes glued together. \n\n![array.map(cook())](quiver-image-url/FBD310D7FF5304916AF83C1B68AD6A2F.png)\n\n"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "let familyTree = {\n  value: 'John',\n  nodes: [\n    {\n      value: \"Adam\",\n      nodes: [\n          {\n            value: \"Marylin\",\n            value: \"Anthony\"\n          }\n        ]\n    },\n    {\n      value: \"MaryLou\",\n      nodes: [\n        {\n          value: \"Helen\",\n          value: \"Robert\"\n        }\n      ]\n    }\n  ]\n}\n\nfunction mapTree (node, mapper) {\n  return {\n    value: mapper(node.value),\n    nodes: node.nodes\n    ? node.nodes.map( x => \n    mapTree(x, mapper)\n    )\n    : null\n  }\n}\n\nmapTree(_.capitalize, familyTree)\n"
+    },
+    {
+      "type": "markdown",
+      "data": "Map as a concept\n\nHow does map relate to tree and array. map only knows arrays, not about strings, or how to capitalize them.\n\nmapTree can only work with trees\n\nThe point of functors:\nfunctors allows functions to work on data structures even though they were not specifically built for that."
+    },
+    {
+      "type": "markdown",
+      "data": "Streams: (bacon library)\nStreams are like async arrays."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function createStreamOfFood () {\n  return {\n    onValue: callback => {\n      setTimeout(() => callback('galinha'), 1000)\n      setTimeout(() => callback('vaca'), 2000)\n      setTimeout(() => callback('milho'), 3000)\n    }\n  }\n}\n\nlet foodStream = createStreamOfFood()\nfoodStream.onValue( food => console.log(food) )"
+    },
+    {
+      "type": "markdown",
+      "data": "This makes us listen to the array by passing a callback function. This is the essence of a stream. Stream is a pattern to deal with the problem of having a set of values that arrive to you whenever they gosh darn it feel like."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "let Bacon = require('baconjs').Bacon\nlet foodStream = new Bacon.Bus()\n\nsetTimeout(() => foodStream.push('galinha'), 1000)\nsetTimeout(() => foodStream.push('vaca'), 2000)\nsetTimeout(() => foodStream.push('milho'), 3000)\n\nfoodStream\n  .onValue ( food => console.log(food) )"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": "to capitalize like before we add two"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "let Bacon = require('baconjs').Bacon\nlet foodStream = new Bacon.Bus()\nlet _ = require('lodash')\n\nsetTimeout(() => foodStream.push('galinha'), 1000)\nsetTimeout(() => foodStream.push('vaca'), 2000)\nsetTimeout(() => foodStream.push('milho'), 3000)\n\nfoodStream\n  .map(_.capitalize)\n  .onValue ( food => console.log(food) )"
+    },
+    {
+      "type": "markdown",
+      "data": "**Flatmap**\nFlatmap is just like map, except flatMap does NOT expect the mapper to return a value\n\nInstead, flatMap expects the mapper to return a functor containing the value, and flatMap will take that functor and flatten into its actual value\n\n"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function getInEnglish(word) {\n  const apiKey = ''\n  const url = \n  'https://www.googleapis.com' +\n  'language/translate/v2' +\n  '?key=' + apiKey +\n  '&source=pt' +\n  '&target=en' +\n  '&q=' + encodeURIComponent(word)\n  const promise = fetch(url)\n    .then(response => response.json())\n    .then(parsedResponse => \n      parsedResponse\n        .data\n        .translations[0]\n        .translatedText\n    )\n  return promise\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "let Bacon = require('baconjs').Bacon\nlet foodStream = new Bacon.Bus()\nlet getInEnglish = require('./getInEnglish')\n\nsetTimeout(() => foodStream.push('galinha'), 1000)\nsetTimeout(() => foodStream.push('vaca'), 2000)\nsetTimeout(() => foodStream.push('milho'), 3000)\n\nfoodStream\n  .map(getInEnglish)\n  .onValue ( food => console.log(food) )\n  \n> Promise { <pending> }\n> Promise { <pending> }\n> Promise { <pending> }"
+    },
+    {
+      "type": "markdown",
+      "data": "Map, not being smart, just returned what it was given. Let's convert it to a Bacon Stream"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "let Bacon = require('baconjs').Bacon\nlet foodStream = new Bacon.Bus()\nlet getInEnglish = require('./getInEnglish')\n\nsetTimeout(() => foodStream.push('galinha'), 1000)\nsetTimeout(() => foodStream.push('vaca'), 2000)\nsetTimeout(() => foodStream.push('milho'), 3000)\n\nfoodStream\n  .flatMap( word => Bacon.fromPromise(getInEnglish(word) )\n  .onValue ( food => console.log(food) )\n  "
+    }
+  ]
+}

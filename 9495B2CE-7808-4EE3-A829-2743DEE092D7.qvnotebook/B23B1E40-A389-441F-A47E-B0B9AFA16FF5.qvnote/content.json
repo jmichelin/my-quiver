@@ -1,0 +1,10 @@
+{
+  "title": "Basic authenticate()",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "\n//Authenticating requests is as simple as calling passport.authenticate() and specifying which strategy to employ. authenticate()'s function signature is standard Connect middleware, which makes it convenient to use as route middleware in Express applications.\n\napp.post('/login',\n  passport.authenticate('local'),\n  function(req, res) {\n    // If this function gets called, authentication was successful.\n    // `req.user` contains the authenticated user.\n    res.redirect('/users/' + req.user.username);\n  });\n  \n  //By default, if authentication fails, Passport will respond with a 401 Unauthorized status, and any additional route handlers will not be invoked. If authentication succeeds, the next handler will be invoked and the req.user property will be set to the authenticated user."
+    }
+  ]
+}

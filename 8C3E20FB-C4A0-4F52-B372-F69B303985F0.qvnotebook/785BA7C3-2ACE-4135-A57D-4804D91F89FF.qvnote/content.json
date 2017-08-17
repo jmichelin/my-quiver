@@ -1,0 +1,10 @@
+{
+  "title": "Destructuring",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var obj = {\n  value1: \"foo\",\n  value2: \"bar\",\n  value3: \"baz\"\n}\n\n var {value1 , value2 } = obj;\n \n console.log(value1)\n console.log(value2)\n \nvar a, b, rest;\n[a, b] = [10, 20];\nconsole.log(a); // 10\nconsole.log(b); // 20\n\n[a, b, ...rest] = [10, 20, 30, 40, 50];\nconsole.log(a); // 10\nconsole.log(b); // 20\nconsole.log(rest); // [30, 40, 50]\n\n({a, b} = {a: 10, b: 20});\nconsole.log(a); // 10\nconsole.log(b); // 20\n\n// Experimental (not yet standardized)\n//({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Toggle Span Editable",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": " $('span').bind('dblclick', function () {\n      $(this).attr('contentEditable', true);\n    }).blur(\n      function () {\n        console.log('$(this)=> ', $(this));\n        $(this).attr('contentEditable', false);\n      });"
+    }
+  ]
+}

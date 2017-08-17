@@ -1,0 +1,14 @@
+{
+  "title": "6cwm",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "componentWillMount() {\n  \n}"
+    },
+    {
+      "type": "markdown",
+      "data": "This method runs right before the component gets mounted. This one is not too common to use, but you will want to use it any time you want to ensure code to run both in node and in the browser."
+    }
+  ]
+}

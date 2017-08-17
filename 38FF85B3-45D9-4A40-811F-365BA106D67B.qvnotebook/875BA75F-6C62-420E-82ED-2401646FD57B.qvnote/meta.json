@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493320893,
+  "tags" : [
+
+  ],
+  "title" : "What would the following lines of code output to the console?  console.log(\"0 || 1 = \"+(0 || 1)); console.log(\"1 || 2 = \"+(1 || 2)); console.log(\"0 && 1 = \"+(0 && 1)); console.log(\"1 && 2 = \"+(1 && 2)); Explain your answer.",
+  "updated_at" : 1493320906,
+  "uuid" : "875BA75F-6C62-420E-82ED-2401646FD57B"
+}

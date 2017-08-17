@@ -1,0 +1,10 @@
+{
+  "title": "Node Express CORS",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "app.use(function(req, res, next) {\n  res.header(\"Access-Control-Allow-Origin\", \"*\");\n  res.header(\"Access-Control-Allow-Headers\", \"Origin, X-Requested-With, Content-Type, Accept\");\n  next();\n});"
+    }
+  ]
+}

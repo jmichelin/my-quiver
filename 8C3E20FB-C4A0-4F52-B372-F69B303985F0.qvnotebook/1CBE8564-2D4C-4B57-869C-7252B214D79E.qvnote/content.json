@@ -1,0 +1,10 @@
+{
+  "title": "Basic App.js",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "import React from 'react'\n\nclass App extends React.Component {\n  constructor () {\n    super()\n    this.state = {items: []}\n  }\n  componentWillMount () {\n    let fetchUrl = ['http://swapi.co/api/people/?format=json']\n    fetchUrl.push('https://infinite-waters-52055.herokuapp.com/interview/questions/list')\n    fetch(fetchUrl[1])\n      .then(\n        (response) => {\n          return response.json()\n        }\n      )\n      .then(\n        (items) => {\n          console.log('items ', items);\n          return this.setState({items});\n        })\n  }\n  filter (e) {\n    this.setState({filter: e.target.value})\n  }\n  render () {\n    let items = this.state.items //this line does this\n    if(this.state.filter) {\n      items = items.filter(item =>\n        item.genre.toLowerCase()\n          .includes(this.state.filter.toLowerCase()))\n    }\n    return (\n      <div>\n        <input type=\"text\" onChange={this.filter.bind(this)}/>\n        {items.map(item => <Interview key={item._id} interview={item} />)}\n      </div>\n    )\n  }\n}\n\nconst Interview = (props) => {\n  return (\n    <div>\n      <h3>{props.interview.genre}</h3>\n      <h4>{props.interview.title} - Time to Answer {props.interview.timeToAnswer} mins</h4>\n      <p>{props.interview.questionText}</p>\n      <p>{props.interview.answerText}</p>\n    </div>\n  )\n}\n\nexport default App"
+    }
+  ]
+}

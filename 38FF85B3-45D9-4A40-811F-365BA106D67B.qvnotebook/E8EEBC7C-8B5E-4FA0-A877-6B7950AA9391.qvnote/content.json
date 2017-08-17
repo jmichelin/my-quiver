@@ -1,0 +1,10 @@
+{
+  "title": "What will the following code output to the console and why:  var hero = {     _name: 'John Doe',     getSecretIdentity: function (){         return this._name;     } };  var stoleSecretIdentity = hero.getSecretIdentity;  console.log(stoleSecretIdentity()); console.log(hero.getSecretIdentity());",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "What will the following code output to the console and why:\n\nvar hero = {\n    _name: 'John Doe',\n    getSecretIdentity: function (){\n        return this._name;\n    }\n};\n\nvar stoleSecretIdentity = hero.getSecretIdentity;\n\nconsole.log(stoleSecretIdentity());\nconsole.log(hero.getSecretIdentity());\n\nWhat is the issue with this code and how can it be fixed.\n\nThe code will output:\n\nundefined\nJohn Doe\nThe first console.log prints undefined because we are extracting the method from the hero object, so stoleSecretIdentity() is being invoked in the global context (i.e., the window object) where the _name property does not exist.\n\nOne way to fix the stoleSecretIdentity() function is as follows:\n\nvar stoleSecretIdentity = hero.getSecretIdentity.bind(hero);"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "dotenv module",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "if (process.env.NODE_ENV !== 'production') require('dotenv').config();"
+    }
+  ]
+}

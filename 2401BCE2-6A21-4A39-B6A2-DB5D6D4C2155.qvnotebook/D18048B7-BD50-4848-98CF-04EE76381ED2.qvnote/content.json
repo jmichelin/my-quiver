@@ -1,0 +1,10 @@
+{
+  "title": "Basic Request",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "'use strict';\nconst request = require(\"request\");\n\nconst nonce = function(length) {\n    let text = \"\";\n    let possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\n    for(var i = 0; i < length; i++) {\n        text += possible.charAt(Math.floor(Math.random() * possible.length));\n    }\n    return text;\n}\n\nconst getTimestamp = funciton() {\n  return Date.now();\n}\n\nconst options = { method: 'GET',\n  url: 'https://api.yelp.com/v2/search/',\n  qs: \n   { oauth_consumer_key: 'your_key',\n     oauth_token: 'your_token',\n     oauth_signature_method: 'HMAC-SHA1',\n     oauth_timestamp: getTimestamp(),\n     oauth_nonce: nonce(),\n     oauth_signature: 'your_signature',\n     location: 'Santa Monica, CA',\n     sort: '2',\n     limit: '1',\n     radius_filter: '10000',\n     category_filter: 'japanese,ramen',\n     actionlinks: 'true' },\n  headers: \n   { 'postman-token': '0254495b-299c-7fc3-2d0f-43065ca46401',\n     'cache-control': 'no-cache',\n     'content-type': 'application/json' } };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+    }
+  ]
+}

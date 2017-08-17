@@ -1,0 +1,10 @@
+{
+  "title": "Flash Messages",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "\n//Redirects are often combined with flash messages in order to display status information to the user.\n\napp.post('/login',\n  passport.authenticate('local', { successRedirect: '/',\n                                   failureRedirect: '/login',\n                                   failureFlash: true })\n);\n\n//Setting the failureFlash option to true instructs Passport to flash an error message using the message given by the strategy's verify callback, if any. This is often the best approach, because the verify callback can make the most accurate determination of why authentication failed.\n\n//Alternatively, the flash message can be set specifically.\n\npassport.authenticate('local', { failureFlash: 'Invalid username or password.' });\n\n//A successFlash option is available which flashes a success message when authentication succeeds.\n\npassport.authenticate('local', { successFlash: 'Welcome!' });\n\n//Note: Using flash messages requires a req.flash() function. Express 2.x provided this functionality, however it was removed from Express 3.x. Use of connect-flash middleware is recommended to provide this functionality when using Express 3.x."
+    }
+  ]
+}

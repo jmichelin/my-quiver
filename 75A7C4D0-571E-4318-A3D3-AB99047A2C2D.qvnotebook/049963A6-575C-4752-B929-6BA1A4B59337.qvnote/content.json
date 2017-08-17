@@ -1,0 +1,19 @@
+{
+  "title": "Perf",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "import Perf from \"react-addons-perf\";\n\nwindow.Perf = Perf;\n\nPerf.start();"
+    },
+    {
+      "type": "markdown",
+      "data": "In console you can now use the site for a bit then:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "Perf.stop();\nPerf.printWasted(); //wasted render cycles\nPerf.printInclusive(); //everything including life cycle methods\nPerf.printExclusive(); // dont care about life cycle methods and parents\n"
+    }
+  ]
+}

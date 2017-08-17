@@ -1,0 +1,14 @@
+{
+  "title": "6cwrp",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "componentWillReceiveProps(nextProps) {\n  \n}"
+    },
+    {
+      "type": "markdown",
+      "data": "This method runs every time the React component receives new/different props from the parent. If some of the state you keep in your component is derived from the parent props, this is where you would take care of that. What if you keep a list of actors in a movie as state that you request from an API? If your parent passes you a new movie, you need to react to that and get new actors for the new movie. This would be an example of where to use this method."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "6cerc",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "class  extends React.Component {\n  render() {\n    return \n  }\n}"
+    }
+  ]
+}

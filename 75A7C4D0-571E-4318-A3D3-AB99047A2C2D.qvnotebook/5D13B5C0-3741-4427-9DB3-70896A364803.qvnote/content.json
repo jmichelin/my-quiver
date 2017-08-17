@@ -1,0 +1,10 @@
+{
+  "title": "6ird",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "import ReactDOM from 'react-dom'"
+    }
+  ]
+}

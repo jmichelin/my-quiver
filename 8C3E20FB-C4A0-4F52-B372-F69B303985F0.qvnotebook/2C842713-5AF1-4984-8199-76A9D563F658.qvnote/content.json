@@ -1,0 +1,10 @@
+{
+  "title": "Count Between Indexes In Array",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var countBetween = [4,1,1,1,4];\n\ncountBetween.slice(1,4).reduce(function(acc, val) { return acc + val;}, 0);"
+    }
+  ]
+}

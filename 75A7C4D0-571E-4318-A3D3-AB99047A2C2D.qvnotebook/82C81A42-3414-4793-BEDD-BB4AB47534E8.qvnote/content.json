@@ -1,0 +1,10 @@
+{
+  "title": "6dp",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".defaultProps = {: }"
+    }
+  ]
+}

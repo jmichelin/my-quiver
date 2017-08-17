@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493321389,
+  "tags" : [
+
+  ],
+  "title" : "Consider the code snippet below. What will the console output be and why?  (function(x) {     return (function(y) {         console.log(x);     })(2) })(1);",
+  "updated_at" : 1493321401,
+  "uuid" : "0E839BF9-8965-44D0-8BCF-1569C3AD26BE"
+}

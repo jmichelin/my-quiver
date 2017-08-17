@@ -1,0 +1,10 @@
+{
+  "title": "Fusion Request",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// App ID\n// me1qVGoiji79saK7xKTiyQ\n// App Secret\n// 9LJ65iZVmOAU6M1mNpIS5lw01aflGnDcTKo98x6Ah3mafGAh2rS2UX6Xecdtn6BP\n\n'use strict';\n\nconst yelp = require('yelp-fusion');\n\n// Place holders for Yelp Fusion's OAuth 2.0 credentials. Grab them\n// from https://www.yelp.com/developers/v3/manage_app\nconst clientId = '<YOUR_CLIENT_ID>';\nconst clientSecret = '<YOUR_CLIENT_SECRET>';\n\nconst searchRequest = {\n  term:'Four Barrel Coffee',\n  location: 'san francisco, ca'\n};\n\nyelp.accessToken(clientId, clientSecret).then(response => {\n  const client = yelp.client(response.jsonBody.access_token);\n\n  client.search(searchRequest).then(response => {\n    const firstResult = response.jsonBody.businesses[0];\n    const prettyJson = JSON.stringify(firstResult, null, 4);\n    console.log(prettyJson);\n  });\n}).catch(e => {\n  console.log(e);\n});"
+    }
+  ]
+}

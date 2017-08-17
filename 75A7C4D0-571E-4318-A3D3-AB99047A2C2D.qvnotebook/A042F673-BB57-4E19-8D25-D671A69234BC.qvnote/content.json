@@ -1,0 +1,14 @@
+{
+  "title": "6scu",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "  shouldComponentUpdate() {\n    console.log('Should Component Update');\n    return true;\n  }"
+    },
+    {
+      "type": "markdown",
+      "data": "This method returns a boolean letting React know if it should re-render the component. This is for performance purposes. If you have a component that will never update (like a static logo or something) you can just return false here. Normally React is really fast at doing this diffs anyway so it's a good idea to only put in a shouldComponentUpdate method if it's actually a performance issue. Typically in the method body you would check the bare minimum of state that needs to have changed to warrant a re-render. We'll discuss this more in depth later."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493320758,
+  "tags" : [
+
+  ],
+  "title" : "What will the code below output to the console and why ?  console.log(1 +  \"2\" + \"2\"); console.log(1 +  +\"2\" + \"2\"); console.log(1 +  -\"1\" + \"2\"); console.log(+\"1\" +  \"1\" + \"2\"); console.log( \"A\" - \"B\" + \"2\"); console.log( \"A\" - \"B\" + 2);",
+  "updated_at" : 1493320775,
+  "uuid" : "A1AFE873-087D-4DEE-8102-4F420DCEF11A"
+}

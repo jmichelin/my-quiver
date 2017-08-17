@@ -1,0 +1,10 @@
+{
+  "title": "Basic Reducer",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "/**\n * Created by jmichelin on 4/23/17.\n */\n'use strict';\n\nconst expect = require('expect');\n\nconst counter =(state = 0, action)=>{\n  switch (action.type) {\n    case 'INCREMENT':\n      return state + 1;\n    case 'DECREMENT':\n      return state - 1;\n    default:\n      return state;\n  }\n}\n\nexpect(counter(0, {type: 'INCREMENT'})).toEqual(1);\n\nexpect(counter(1, {type: 'INCREMENT'})).toEqual(2);\n\nexpect(counter(2, {type: 'DECREMENT'})).toEqual(1);\n\nexpect(counter(1, {type: 'DECREMENT'})).toEqual(0);\n\nexpect(counter(0, {type: 'SOMETHING_ELSE'})).toEqual(0);\n\nexpect(counter(undefined, {})).toEqual(0);\n\nconsole.log('Test\\'s Passed');"
+    }
+  ]
+}

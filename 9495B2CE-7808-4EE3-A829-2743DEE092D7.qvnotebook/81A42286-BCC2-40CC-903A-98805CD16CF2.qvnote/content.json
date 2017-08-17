@@ -1,0 +1,10 @@
+{
+  "title": "Middleware",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//In a Connect or Express-based application, passport.initialize() middleware is required to initialize Passport. If your application uses persistent login sessions, passport.session() middleware must also be used.\n\napp.configure(function() {\n  app.use(express.static('public'));\n  app.use(express.cookieParser());\n  app.use(express.bodyParser());\n  app.use(express.session({ secret: 'keyboard cat' }));\n  app.use(passport.initialize());\n  app.use(passport.session());\n  app.use(app.router);\n});\n\n//Note that enabling session support is entirely optional, though it is recommended for most applications. If enabled, be sure to use express.session() before passport.session() to ensure that the login session is restored in the correct order."
+    }
+  ]
+}

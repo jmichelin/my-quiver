@@ -1,0 +1,10 @@
+{
+  "title": "Center Image",
+  "cells": [
+    {
+      "type": "code",
+      "language": "css",
+      "data": ".thumbnail {\n  position: relative;\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n}\n.thumbnail img {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  height: 100%;\n  width: auto;\n  -webkit-transform: translate(-50%,-50%);\n      -ms-transform: translate(-50%,-50%);\n          transform: translate(-50%,-50%);\n}\n.thumbnail img.portrait {\n  width: 100%;\n  height: auto;\n}\n\n\n/* \ncss3\n*/\n\n.center-cropped {\n  object-fit: none; /* Do not scale the image */\n  object-position: center; /* Center the image within the element */\n  height: 100px;\n  width: 100px;\n}\n<img class=\"center-cropped\" src=\"http://placehold.it/200x200\" />\n\n/*\nas background-image\n*/\n\n.center-cropped {\n  width: 100px;\n  height: 100px;\n  background-position: center center;\n  background-repeat: no-repeat;\n  overflow: hidden;\n}\n\n/* Set the image to fill its parent and make transparent */\n.center-cropped img {\n  min-height: 100%;\n  min-width: 100%;\n  /* IE 8 */\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  /* IE 5-7 */\n  filter: alpha(opacity=0);\n  /* modern browsers */\n  opacity: 0;\n}\n<div class=\"center-cropped\" \n     style=\"background-image: url('http://placehold.it/200x200');\">\n  <img src=\"http://placehold.it/200x200\" />\n</div>"
+    }
+  ]
+}

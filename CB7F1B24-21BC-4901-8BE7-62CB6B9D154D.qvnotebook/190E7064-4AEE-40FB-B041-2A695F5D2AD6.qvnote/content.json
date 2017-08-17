@@ -1,0 +1,10 @@
+{
+  "title": "Minimal node Docker",
+  "cells": [
+    {
+      "type": "code",
+      "language": "dockerfile",
+      "data": "FROM mhart/node-alpine\nCOPY server.js .\nEXPOSE 8000\nCMD node server.js"
+    }
+  ]
+}

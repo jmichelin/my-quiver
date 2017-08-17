@@ -1,0 +1,10 @@
+{
+  "title": "Basic index.js",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport App from './App';\n\nReactDOM.render(\n  <App />,\n  document.getElementById('root')\n);\n"
+    }
+  ]
+}

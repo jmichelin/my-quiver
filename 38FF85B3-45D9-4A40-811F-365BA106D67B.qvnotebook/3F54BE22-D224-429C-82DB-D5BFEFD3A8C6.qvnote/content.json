@@ -1,0 +1,10 @@
+{
+  "title": "Consider the two functions below. Will they both return the same thing? Why or why not?",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function foo1()\n{\n  return {\n      bar: \"hello\"\n  };\n}\n\nfunction foo2()\n{\n  return\n  {\n      bar: \"hello\"\n  };\n}"
+    }
+  ]
+}

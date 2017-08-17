@@ -1,0 +1,10 @@
+{
+  "title": "Logging",
+  "cells": [
+    {
+      "type": "code",
+      "language": "markdown",
+      "data": "Most people think logging is about logging trace messages to go back for debugging.  But its actually about logging just enough so you can see what's going on, without logging too much that its too difficult to find anything or make sense of it.  But is also about monitoring.  There are tools that can watch logs and translate log messages into metrics to keep an eye on things in real-time.  In the end, a good logging strategy is about forensics -- using the info to be as productive as possible in correcting whatever is wrong.\n\nSo : Logging implies discipline, implies monitoring, implies forensics.  It's all about the monitoring and forensics, nothing more.\nForensics primarily"
+    }
+  ]
+}

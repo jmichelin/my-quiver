@@ -1,0 +1,10 @@
+{
+  "title": "Timestamp",
+  "cells": [
+    {
+      "type": "code",
+      "language": "c_cpp",
+      "data": "let timeInMs = Date.now();"
+    }
+  ]
+}

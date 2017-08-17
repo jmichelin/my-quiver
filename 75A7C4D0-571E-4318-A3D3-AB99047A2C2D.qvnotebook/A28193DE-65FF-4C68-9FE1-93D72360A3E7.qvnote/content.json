@@ -1,0 +1,10 @@
+{
+  "title": "6cdu",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "  componentDidUpdate() {\n    console.log('InterviewList.js => Did Update');\n  }"
+    }
+  ]
+}

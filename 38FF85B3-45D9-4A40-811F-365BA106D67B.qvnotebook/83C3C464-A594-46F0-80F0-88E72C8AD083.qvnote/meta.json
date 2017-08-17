@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493318826,
+  "tags" : [
+
+  ],
+  "title" : "(function(){   var a = b = 3; })();  console.log(\"a defined? \" + (typeof a !== 'undefined')); console.log(\"b defined? \" + (typeof b !== 'undefined’));",
+  "updated_at" : 1493318844,
+  "uuid" : "83C3C464-A594-46F0-80F0-88E72C8AD083"
+}

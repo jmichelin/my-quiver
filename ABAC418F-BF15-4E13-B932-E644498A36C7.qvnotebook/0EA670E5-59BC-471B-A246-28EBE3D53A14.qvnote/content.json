@@ -1,0 +1,9 @@
+{
+  "title": "asciiDeleteDistance",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Given two strings, find the delete distance between the two. The delete distance is the value of the characters to be removed until the two strings are the same. \n \nFor example, the distance between \"at\" and \"cat\" is 99. \nThe distance between \"bat\" and \"cat\" is 197.\nThe distance between \"trough\" and \"coughs\" is 444."
+    }
+  ]
+}

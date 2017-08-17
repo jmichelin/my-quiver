@@ -1,0 +1,10 @@
+{
+  "title": "Example Layout",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "toolbox/\n    README.md\n    crontab.txt\n    chimes/\n    config.yml -> configs/config.CAMPUS.yml\n    configs/\n        config.sample.yml\n        ...\n    repos/\n        crontab.txt\n        ...\n        utils.forkchop -> ../utils.forkchop\n        utils.publication -> ../utils.publication\n        utils.solution -> ../utils.solution\n    toy_problems/\n        crontab.txt\n        ...\n        utils.publication -> ../utils.publication\n        utils.solution -> ../utils.solution\n    utils.forkchop/\n    utils.problemify/\n    utils.publication/\n    utils.solution/\n        ...\n        utils.problemify -> ../utils.problemify"
+    }
+  ]
+}

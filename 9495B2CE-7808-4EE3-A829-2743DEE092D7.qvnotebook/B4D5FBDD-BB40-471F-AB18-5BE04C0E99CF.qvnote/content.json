@@ -1,0 +1,10 @@
+{
+  "title": "Parameters",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "By default, LocalStrategy expects to find credentials in parameters named username and password. If your site prefers to name these fields differently, options are available to change the defaults.\n\npassport.use(new LocalStrategy({\n    usernameField: 'email',\n    passwordField: 'passwd'\n  },\n  function(username, password, done) {\n    // ...\n  }\n));"
+    }
+  ]
+}

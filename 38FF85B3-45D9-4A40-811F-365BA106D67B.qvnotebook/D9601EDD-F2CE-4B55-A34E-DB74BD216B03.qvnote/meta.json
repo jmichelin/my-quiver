@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493320861,
+  "tags" : [
+
+  ],
+  "title" : "What will be the output of the following code:  for (var i = 0; i < 5; i++) {   setTimeout(function() { console.log(i); }, i * 1000 ); } Explain your answer. How could the use of closures help here?",
+  "updated_at" : 1493320881,
+  "uuid" : "D9601EDD-F2CE-4B55-A34E-DB74BD216B03"
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Server-Side Javascript",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "#Server-Side Javascript! \n\nJS has become all the rage... with good reason! For years beforehand, incredibly passionate developers and the unstoppable spread of the Worldwide Web helped fuel myriad JavaScript projects, pushing the limits of the language and the environments in which it could be deployed. In 2009, Node.js ushered JavaScript beyond the confines of the browser and opened the floodgates for web developers to become full-stack application engineers. \n\nNow, if you know JavaScript, you know app development. Our talk will provide a tour of the features of the Node.js ecosystem and demo many associated technologies, showing you how to create working APIs quickly and efficiently.\n\n\n- [ ] Start with a history of server side js\n- In December 1995, soon after releasing JavaScript for browsers, Netscape introduced an implementation of the language for server-side scripting with Netscape Enterprise Server.[18]\n- [ ] the introduction of node\n- [ ] the io.js fork\n- [ ] the growth of node and npm.\n- [ ] build app in \n- [ ] pure node\n- [ ] express\n- [ ] koa\n- [ ] hapi\n- [ ] new features in version 8/5\n"
+    }
+  ]
+}

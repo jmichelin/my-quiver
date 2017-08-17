@@ -1,0 +1,10 @@
+{
+  "title": "6irr",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "import React from 'react';"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493318918,
+  "tags" : [
+
+  ],
+  "title" : "var myObject = {     foo: \"bar\",     func: function() {         var self = this;         console.log(\"outer func:  this.foo = \" + this.foo);         console.log(\"outer func:  self.foo = \" + self.foo);         (function() {             console.log(\"inner func:  this.foo = \" + this.foo);             console.log(\"inner func:  self.foo = \" + self.foo);         }());     } }; myObject.func();",
+  "updated_at" : 1493318934,
+  "uuid" : "46E75B45-0CCA-45DF-8E51-DA596B606447"
+}

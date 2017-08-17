@@ -1,0 +1,10 @@
+{
+  "title": "Untitled Note",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "  Error checking TLS connection: Error checking and/or regenerating the certs: There was an error validating certificates for host \"192.168.99.100:2376\": dial tcp 192.168.99.100:2376: i/o timeout\n\n\nhttps://docs.docker.com/toolbox/faqs/troubleshoot/#solutions"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "look at JSON in a nice way",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "<pre><code>{JSON.stringify(JSONFILE, null, 4)}</code></pre>"
+    }
+  ]
+}

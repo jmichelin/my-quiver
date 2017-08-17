@@ -1,0 +1,10 @@
+{
+  "title": "Useful Commands",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "docker images # lists available local images\n\ndocker run  <image> # runs specified docker image\n            # -p flag to map ports example: docker run -p 8000:8000\n\ndockerd # start up docker daemon\n\ndocker stop sad_hugle # stop docker container by name\n\ndocker-compose build # builds image\n\ndocker-compose up # launches image"
+    }
+  ]
+}

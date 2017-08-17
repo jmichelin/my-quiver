@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493320714,
+  "tags" : [
+
+  ],
+  "title" : "Consider the following code snippet:  for (var i = 0; i < 5; i++) {   var btn = document.createElement('button');   btn.appendChild(document.createTextNode('Button ' + i));   btn.addEventListener('click', function(){ console.log(i); });   document.body.appendChild(btn); } (a) What gets logged to the console when the user clicks on “Button 4” and why?  (b) Provide one or more alternate implementations that will work as expected.",
+  "updated_at" : 1493320729,
+  "uuid" : "712759BC-DF00-40E1-84E4-76FAF38E377E"
+}

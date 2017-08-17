@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493320687,
+  "tags" : [
+
+  ],
+  "title" : "In what order will the numbers 1-4 be logged to the console when the code below is executed? Why?  (function() {     console.log(1);      setTimeout(function(){console.log(2)}, 1000);      setTimeout(function(){console.log(3)}, 0);      console.log(4); })();",
+  "updated_at" : 1493320701,
+  "uuid" : "3BBD9F5E-4ED8-4943-A0D3-90DBE9AC9084"
+}

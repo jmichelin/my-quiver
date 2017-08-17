@@ -1,0 +1,10 @@
+{
+  "title": "Verify Callback",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//This example introduces an important concept. Strategies require what is known as a verify callback. The purpose of a verify callback is to find the user that possesses a set of credentials.\n\n//When Passport authenticates a request, it parses the credentials contained in the request. It then invokes the verify callback with those credentials as arguments, in this case username and password. If the credentials are valid, the verify callback invokes done to supply Passport with the user that authenticated.\n\nreturn done(null, user);\n\n//If the credentials are not valid (for example, if the password is incorrect), done should be invoked with false instead of a user to indicate an authentication failure.\n\nreturn done(null, false);\n\n//An additional info message can be supplied to indicate the reason for the failure. This is useful for displaying a flash message prompting the user to try again.\n\nreturn done(null, false, { message: 'Incorrect password.' });\n\n\n//Finally, if an exception occurred while verifying the credentials (for example, if the database is not available), done should be invoked with an error, in conventional Node style.\n\nreturn done(err);\n\n\n//Note that it is important to distinguish the two failure cases that can occur. The latter is a server exception, in which err is set to a non-null value. Authentication failures are natural conditions, in which the server is operating normally. Ensure that err remains null, and use the final argument to pass additional details.\n\n//By delegating in this manner, the verify callback keeps Passport database agnostic. Applications are free to choose how user information is stored, without any assumptions imposed by the authentication layer."
+    }
+  ]
+}

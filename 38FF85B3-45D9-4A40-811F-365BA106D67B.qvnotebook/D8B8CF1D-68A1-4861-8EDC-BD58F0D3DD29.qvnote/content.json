@@ -1,0 +1,10 @@
+{
+  "title": "Create a function that, given a DOM Element on the page, will visit the element itself and all of its descendents (not just its immediate children). For each element visited, the function should pass that element to a provided callback function.  The arguments to the function should be:  a DOM element a callback function (that takes a DOM element as its argument)",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "Create a function that, given a DOM Element on the page, will visit the element itself and all of its descendents (not just its immediate children). For each element visited, the function should pass that element to a provided callback function.\n\nThe arguments to the function should be:\n\na DOM element\na callback function (that takes a DOM element as its argument)\n\n\nVisiting all elements in a tree (DOM) is a classic Depth-First-Search algorithm application. Here’s an example solution:\n\nfunction Traverse(p_element,p_callback) {\n   p_callback(p_element);\n   var list = p_element.children;\n   for (var i = 0; i < list.length; i++) {\n       Traverse(list[i],p_callback);  // recursive call\n   }\n}"
+    }
+  ]
+}

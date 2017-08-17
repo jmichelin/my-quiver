@@ -1,0 +1,10 @@
+{
+  "title": "Wifi",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "{\n  \"Hack Reactor\" : \"plantlife\",\n  \"Hack Reactor Staff\" : \"appleboatwoodpecker\",\n  \"Hack Reactor Guest\" : \"appleorangebanana\"\n}"
+    }
+  ]
+}

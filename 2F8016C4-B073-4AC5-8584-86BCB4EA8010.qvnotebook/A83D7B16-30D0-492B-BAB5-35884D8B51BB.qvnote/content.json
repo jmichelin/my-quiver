@@ -1,0 +1,10 @@
+{
+  "title": "Helpful Commands",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "aws ec2 describe-subnets # list available subnets\n\ndocker-machine rm -f <machine-name> #remove a host\n\ndocker-machine env <machine-name> #show environment for this host\n\nsudo usermod -aG docker $USER # add user to docker\n$ sudo service docker restart #restart docker\n$ sudo service docker status (should see active (running)) #look at docker"
+    }
+  ]
+}

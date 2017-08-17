@@ -1,0 +1,10 @@
+{
+  "title": "sheet",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "/**\n * Created by jmichelin on 4/14/17.\n */\n'use strict';\nconst express = require('express');\nconst app = express();\nconst bodyParser = require('body-parser');\napp.use(bodyParser.json());\nconst uuidV1 = require('uuid/v1');\n\n\nconst google = require('googleapis');\nconst creds = require('../credentials.json');\n\n\nconst auth = new google.auth.JWT(\n  creds.client_email,\n  null,\n  creds.private_key,\n  [\n    'https://www.googleapis.com/auth/spreadsheets'\n  ],\n  null\n);\n\ngoogle.options({auth});\n\nconst sheets = google.sheets('v4');\nconst spreadSheetId = '1D4fIVEXZFzeLV63-X_2nKr088h0kW1cNzUZGS_TgPuc';\n\napp.get('/', (req, res) => {\n  res.send('Hello')\n})\n\napp.post('/items', (req, res) => {\n  sheets.spreadsheets.values.append({\n  spreadsheetId: spreadSheetId,\n  range: 'items!itemList',\n  valueInputOption: 'USER_ENTERED',\n  includeValuesInResponse: true,\n  resource: {\n    values: [[req.body.item, req.body.count]]\n  }\n}, (err, response) => {\n  res.send(response.updates)\n})\n})\n;\n\napp.get('/items', (req, res) => {\n  sheets.spreadsheets.values.get({\n  spreadsheetId:spreadSheetId,\n  range: 'items!itemList'\n}, (err, response) => {\n  res.send(response.values.map(([item, count]) => ({ item, count })))\n})\n})\n\n\napp.listen(3000);"
+    }
+  ]
+}

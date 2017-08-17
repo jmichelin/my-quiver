@@ -1,0 +1,10 @@
+{
+  "title": "Dockerfile",
+  "cells": [
+    {
+      "type": "code",
+      "language": "dockerfile",
+      "data": "# add a new user to a docker image \nRUN useradd --user-group --create-home --shell /bin/false nodejs\n# user this new users home directory as HOME\nENV HOME=/home/nodejs\nENV NODE_ENV=production\n"
+    }
+  ]
+}

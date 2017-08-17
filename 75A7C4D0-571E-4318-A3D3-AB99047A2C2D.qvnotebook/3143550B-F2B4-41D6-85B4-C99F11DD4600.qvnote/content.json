@@ -1,0 +1,10 @@
+{
+  "title": "6cns",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "constructor()\n{\n  super()\n}"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Basic Redux",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "##Redux\n- [ ] Single Store as a JS object\n- [ ] Create new state in the store, not modify existing\n- [ ] Actions start the changes for the new state\n- [ ] state is read only\n- [ ] dispatching an action is the only way to change state tree\n\n###Action\n  - [ ] Plain JS object describing minimally the change\n  - [ ] Must have a _type_ property recommend a string as value\n  \n####Pure vs Impure Functions"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// Pure functions\nfunction square(x) {\n  return x * x;\n}\nfunction squareAll(items) {\n  return items.map(square);\n}\n\n// Impure functions\nfunction square(x) {\n  updateXInDatabase(x);\n  return x * x;\n}\nfunction squareAll(items) {\n  for (let i = 0; i < items.length; i++) {\n    items[i] = square(items[i]);\n  }\n}"
+    },
+    {
+      "type": "markdown",
+      "data": "#####Pure functions\ndepend only on arguments no observable side effects like network or database calls. Very predictable. They do not modify the arguments given to them\n\n#####Impure Functions\nMay call database or network, may have side effects, may overwrite input given to them. They may operate on the DOM."
+    },
+    {
+      "type": "markdown",
+      "data": "####Reducer\n  - [ ] Pure function\n  - [ ] Inputs are previous state and dispatched action\n  - [ ] Returns new object containing state\n  - [ ] Reducers specify how the application's state changes in response to an action\n  - [ ] Given the same arguments, it should calculate the next state and return it. No surprises. No side effects. No API calls. No mutations. Just a calculation.\n  - [ ] Note that each of these reducers is managing its own part of the global state. The state parameter is different for every reducer, and corresponds to the part of the state it manages.\n\n####Store\nThere will only be one store in any redux application. \n  - [ ] Holds application state\n  - [ ] Allows access to state via getState()\n  - [ ] Allows state to be updated via dispatch(action)\n  - [ ] Register listeners via subscribe(listener)\n  - [ ] Handles unregistering listeners via function returned by subscribe(listener)\n\n####Data Flow\nRedux architecture revolves around a strict **unidirectional** data flow.\n"
+    }
+  ]
+}

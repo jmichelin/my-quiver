@@ -1,0 +1,10 @@
+{
+  "title": "Set up project",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "commitizen init cz-conventional-changelog --save-dev --save-exact"
+    }
+  ]
+}

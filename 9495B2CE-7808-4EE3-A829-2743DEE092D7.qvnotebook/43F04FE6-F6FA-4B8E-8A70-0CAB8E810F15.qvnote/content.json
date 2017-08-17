@@ -1,0 +1,10 @@
+{
+  "title": "Redirects",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//A redirect is commonly issued after authenticating a request.\n\napp.post('/login',\n  passport.authenticate('local', { successRedirect: '/',\n                                   failureRedirect: '/login' }));\n//In this case, the redirect options override the default behavior. Upon successful authentication, the user will be redirected to the home page. If authentication fails, the user will be redirected back to the login page for another attempt.\n\n"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "House Robber",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "\n/*\nYou are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.\nGiven a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.\n * @param {number[]} nums\n * @return {number}\n */\nvar rob = function(nums) {\n    var len = nums.length,\n        result = [],\n        i;\n    if (len === 0) {\n        return 0;\n    }\n    if (len === 1) {\n        return nums[0];\n    }\n    result[0] = nums[0];\n    console.log(result)\n    result[1] = Math.max(nums[1], nums[0]);\n    console.log(result)\n    for(i = 2; i < len; i++) {\n        result[i] = Math.max(result[i - 2] + nums[i], result[i - 1]);\n        //console.log(result[i - 2] + nums[i], result[i - 1]);\n        console.log(result);\n    }\n    \n    return result[len - 1];\n};\n\n\n// console.log('[1,100,1000,50] => ' + rob([1,100,1000,50]));\n\n// console.log('[1,2,3,4,5,1,1,8,100,150,102] => '+ rob([1,2,3,4,5,1,1,8,100,150,102]));\n\nconsole.log('[149,2,3,4,5,1,1,8,100,150,102] => '+ rob([149,2,3,4,5,1,1,8,100,150,102]));\n\n"
+    }
+  ]
+}

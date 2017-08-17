@@ -1,0 +1,10 @@
+{
+  "title": "Get IP",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "ifconfig | grep \"inet \" | grep -v 127.0.0.1"
+    }
+  ]
+}

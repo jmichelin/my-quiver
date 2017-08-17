@@ -1,0 +1,23 @@
+{
+  "title": "Super Basic Redux Example",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "index.html"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>JS Bin</title>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js\"></script>\n</head>\n<body>\n</body>\n<script src=\"reducer.js\"></script>\n</html>"
+    },
+    {
+      "type": "markdown",
+      "data": "reducer.js"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "/**\n * Created by jmichelin on 4/23/17.\n */\n'use strict';\n\nconst counter =(state = 0, action)=>{\n  switch (action.type) {\n    case 'INCREMENT':\n      return state + 1;\n    case 'DECREMENT':\n      return state - 1;\n    default:\n      return state;\n  }\n}\n\nconst { createStore } = Redux;\n\nconst store = createStore(counter);\n\nconst render = () => {\n  document.body.innerText = store.getState();\n};\n\n// subscribe()\nstore.subscribe(render);\n\n//initial render call\nrender();\n\n// simple action\ndocument.addEventListener('click', () => {\n  console.log(\"Current State: \", store.getState());\n  console.log('...dispatching INCREMENT...\\n');\n  store.dispatch({type: 'INCREMENT'});\n  console.log('New State: ', store.getState());\n});\n\n"
+    }
+  ]
+}

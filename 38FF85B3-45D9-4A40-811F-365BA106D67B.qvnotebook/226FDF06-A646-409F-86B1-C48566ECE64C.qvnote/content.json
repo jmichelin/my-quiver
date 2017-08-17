@@ -1,0 +1,10 @@
+{
+  "title": "What is a “closure” in JavaScript? Provide an example.",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "A closure is an inner function that has access to the variables in the outer (enclosing) function’s scope chain. The closure has access to variables in three scopes; specifically: (1) variable in its own scope, (2) variables in the enclosing function’s scope, and (3) global variables.\n\nHere is a simple example:\n\nvar globalVar = \"xyz\";\n\n(function outerFunc(outerArg) {\n  var outerVar = 'a';\n  \n  (function innerFunc(innerArg) {\n    var innerVar = 'b';\n    \n    console.log(\n      \"outerArg = \" + outerArg + \"\\n\" +\n      \"innerArg = \" + innerArg + \"\\n\" +\n      \"outerVar = \" + outerVar + \"\\n\" +\n      \"innerVar = \" + innerVar + \"\\n\" +\n      \"globalVar = \" + globalVar);\n    \n  })(456);\n})(123);\nIn the above example, variables from innerFunc, outerFunc, and the global namespace are all in scope in the innerFunc. The above code will therefore produce the following output:\n\nouterArg = 123\ninnerArg = 456\nouterVar = a\ninnerVar = b\nglobalVar = xyz"
+    }
+  ]
+}

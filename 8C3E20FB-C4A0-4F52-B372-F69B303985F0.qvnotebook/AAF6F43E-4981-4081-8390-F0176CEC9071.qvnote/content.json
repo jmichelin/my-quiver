@@ -1,0 +1,10 @@
+{
+  "title": "Basic performance.now()",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "'use strict'\n\nconst doSomething = function() {\n  for(let i = 0; i < 5; i++) {\n    console.log(i + '\\n');\n  }\n};\n\nlet t0 = performance.now();\ndoSomething();\nlet t1 = performance.now();\nconsole.log(\"Call to doSomething took \" + (t1 - t0) + \" to complete\");"
+    }
+  ]
+}

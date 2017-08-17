@@ -1,0 +1,10 @@
+{
+  "title": "Useful Commands",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "git checkout - # toggle active branch\n\ngit branch -d <name> # delete a branch\n\ngit config --list #list configs\n\n#during merge\ngit status #look at unmerged files\n\n#stashing changes\n#example of needing to create a hotfix\n#in branch featureX\n#some work has been done, to save that work and create a new branch for the bug fix do:\ngit stash\ngit checkout -b hotfix\n#make changes and push up hotfix\ngit checkout featureX\ngit stash apply\n\n\n#pager commands\nq #quit\nj #down one line\nk #up one line\nctrl-f #one screen down\nctrl-b #go up a screen\n/      #search /<search_term> \nn # next result\nN # previous result\n\ngit log --oneline #all commits on one line\ngit log --decorate   #adds file info\ngit log --graph  #draws a graph\ngit log -p #shows the actual changes\ngit log --stat #shows additions and subtractions\n\n#log filters\n\ngit log -3 #shows the 3 most recent\ngit log --after=\"yesterday\" #show commmits after yesterday\n#30 minutes ago or last tuesday, or last week, or march 15th or 3/15/2017\ngit log --before=\"yesterday\" #can be combined with --after to create bounds\n#can also use --since and --until\ngit log --author=\"John\" #also parses email\ngit log --author=\"John\\|Jane\" #regex\ngit log --grep=\"fix\" #takes string or regex\n\n#git pick axe\ngit log -S\"route\"\ngit log -S\"search term\" -p\n\n#git pick axe with regex\ngit log -G<REGEX>\n\ngit log -i #ignore case\n\n#filter merge commits out\ngit log --no-merges\n\n\n#rename remotes\ngit remote -v\n# View existing remotes\norigin  https://github.com/OWNER/REPOSITORY.git (fetch)\norigin  https://github.com/OWNER/REPOSITORY.git (push)\n\ngit remote rename origin destination\n# Change remote name from 'origin' to 'destination'\n\ngit remote -v\n# Verify remote's new name\ndestination  https://github.com/OWNER/REPOSITORY.git (fetch)\ndestination  https://github.com/OWNER/REPOSITORY.git (push)\n\n\n# Create new empty branch ??\ngit checkout --orphan empty"
+    }
+  ]
+}

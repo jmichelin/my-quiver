@@ -1,0 +1,25 @@
+{
+  "title": "Sample: Username & Password",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "$ npm install passport-local"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var passport = require('passport')\n  , LocalStrategy = require('passport-local').Strategy;\n\npassport.use(new LocalStrategy(\n  function(username, password, done) {\n    User.findOne({ username: username }, function(err, user) {\n      if (err) { return done(err); }\n      if (!user) {\n        return done(null, false, { message: 'Incorrect username.' });\n      }\n      if (!user.validPassword(password)) {\n        return done(null, false, { message: 'Incorrect password.' });\n      }\n      return done(null, user);\n    });\n  }\n));\n\n//The verify callback for local authentication accepts username and password arguments, which are submitted to the application via a login form.\n"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<form action=\"/login\" method=\"post\">\n    <div>\n        <label>Username:</label>\n        <input type=\"text\" name=\"username\"/>\n    </div>\n    <div>\n        <label>Password:</label>\n        <input type=\"password\" name=\"password\"/>\n    </div>\n    <div>\n        <input type=\"submit\" value=\"Log In\"/>\n    </div>\n</form>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//Route\n\n//The login form is submitted to the server via the POST method. Using authenticate() with the local strategy will handle the login request.\n\napp.post('/login',\n  passport.authenticate('local', { successRedirect: '/',\n                                   failureRedirect: '/login',\n                                   failureFlash: true })\n);\n//Setting the failureFlash option to true instructs Passport to flash an error message using the message option set by the verify callback above. This is helpful when prompting the user to try again."
+    }
+  ]
+}

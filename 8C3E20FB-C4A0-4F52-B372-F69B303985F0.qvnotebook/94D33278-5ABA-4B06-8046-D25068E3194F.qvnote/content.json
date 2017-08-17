@@ -1,0 +1,10 @@
+{
+  "title": "Random String / nonce",
+  "cells": [
+    {
+      "type": "code",
+      "language": "c_cpp",
+      "data": "const randomString = function(length) {\n    let text = \"\";\n    let possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\n    for(var i = 0; i < length; i++) {\n        text += possible.charAt(Math.floor(Math.random() * possible.length));\n    }\n    return text;\n}"
+    }
+  ]
+}

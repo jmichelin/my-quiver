@@ -1,0 +1,10 @@
+{
+  "title": "What is the output out of the following code? Explain your answer.",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "What is the output out of the following code? Explain your answer.\n\nvar a={},\n    b={key:'b'},\n    c={key:'c'};\n\na[b]=123;\na[c]=456;\n\nconsole.log(a[b]);\n\n\nThe output of this code will be 456 (not 123).\n\nThe reason for this is as follows: When setting an object property, JavaScript will implicitly stringify the parameter value. In this case, since b and c are both objects, they will both be converted to \"[object Object]\". As a result, a[b] anda[c] are both equivalent to a[\"[object Object]\"] and can be used interchangeably. Therefore, setting or referencing a[c] is precisely the same as setting or referencing a[b].\n\n"
+    }
+  ]
+}

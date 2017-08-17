@@ -1,0 +1,9 @@
+{
+  "created_at" : 1493321367,
+  "tags" : [
+
+  ],
+  "title" : "What will the following code output to the console:  console.log((function f(n){return ((n > 1) ? n * f(n-1) : n)})(10)); Explain your answer.",
+  "updated_at" : 1493321380,
+  "uuid" : "DBDAC21D-2975-4DB2-AEA2-A7F6F45AFBD1"
+}

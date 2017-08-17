@@ -1,0 +1,14 @@
+{
+  "title": "6cdm",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "  componentDidMount() {\n    console.log(\"Did Mount\", window);\n  }"
+    },
+    {
+      "type": "markdown",
+      "data": "window is available here, ajax, integration with another library like D3.\n\nevent listeners\n\nThis method runs right after your component gets put into the DOM. This method will not get run in node but will in the browser. This makes it so your component can render first then you can go get the data you need. In your component you can throw up a loader if you need to. Also if you need to interact with the DOM (like if you were wrapping D3 or a jQuery plugin) this would be the place to do it."
+    }
+  ]
+}

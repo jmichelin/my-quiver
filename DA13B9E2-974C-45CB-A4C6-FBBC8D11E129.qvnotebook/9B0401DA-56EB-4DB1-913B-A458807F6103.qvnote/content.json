@@ -1,0 +1,10 @@
+{
+  "title": "Vertical Centering",
+  "cells": [
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Title</title>\n  <style>\n    .Aligner {\n      display: flex;\n      align-items: center;\n      min-height: 24em;\n      justify-content: center;\n    }\n\n    .Aligner-item {\n      flex: 1;\n    }\n\n    .Aligner-item--fixed {\n      flex: none;\n      max-width: 50%;\n    }\n  </style>\n</head>\n<body>\n<div class=\"Aligner\">\n  <div class=\"Aligner-item Aligner-item--fixed\">asdfasdfasdfasdfasd</div>\n</div>\n</body>\n</html>"
+    }
+  ]
+}

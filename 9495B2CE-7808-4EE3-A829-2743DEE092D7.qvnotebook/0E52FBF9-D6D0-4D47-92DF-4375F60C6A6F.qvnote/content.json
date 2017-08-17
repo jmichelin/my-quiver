@@ -1,0 +1,10 @@
+{
+  "title": "A most basic route",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "app.post('/login', passport.authenticate('local', {\n  successRedirect: '/',\n  failureRedirect: '/login'\n}));"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "6cwum",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "componentWillUnmount() {\n    $END$\n  }"
+    },
+    {
+      "type": "markdown",
+      "data": "If you need something to happen on both serverside and client side use this life cycle method"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "BFSelect",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "Tree.prototype.BFSelect = function(filter) {\n  var queue = new Queue();\n  var results = [];\n  var current;\n  queue.enqueue([this, 0]);\n  \n  while(current = queue.dequeue()){\n    if(filter(current[0].value, current[1])){\n      results.push(current[0].value);\n    }\n    \n    for(var i = 0; i < current[0].children.length; i++){\n      queue.enqueue([current[0].children[i], current[1] + 1]);\n    }\n  }\n  \n  return results;\n};"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "create a function that takes in a filter argument as a callback\ninstantiate a new Queue\ndeclare an empty array for results\ndeclare a current value place holder\nenqueue root value\nwhile current value is equal to queue.dequeue\n  if the callback filter returns true on the current value\n    push the current value into the array\n  \n  iterate over current children\n    enqueue the children of the current node\n    \nreturn the results array "
+    }
+  ]
+}
